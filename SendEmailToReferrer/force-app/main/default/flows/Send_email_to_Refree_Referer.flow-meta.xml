@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Send email to Refree/Referer</description>
+        <name>Send_email_to_Refree_Referer</name>
+        <label>Send email to Refree/Referer</label>
+        <locationX>176</locationX>
+        <locationY>335</locationY>
+        <actionName>SendEmailToRefreeAndReferer</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>approvalpicklist</name>
+            <value>
+                <elementReference>$Record.Case_Approved_Rejected__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>caseId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ContactId</name>
+            <value>
+                <elementReference>$Record.Contact.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Customer_Contact_email</name>
+            <value>
+                <elementReference>$Record.ContactEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>refferalCode</name>
+            <value>
+                <elementReference>$Record.Referral_Code__c</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>54.0</apiVersion>
+    <description>Send email to Refree/Referer</description>
+    <interviewLabel>Send email to Refree/Referer {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send email to Refree/Referer</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_email_to_Refree_Referer</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case_Approved_Rejected__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

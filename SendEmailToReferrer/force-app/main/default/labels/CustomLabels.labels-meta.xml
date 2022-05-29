@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Case_Approval_Template_Name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Case Approval Template Name</shortDescription>
+        <value>Case Approval Template Name</value>
+    </labels>
+    <labels>
+        <fullName>Case_Rejection_Template_Name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Case Rejection Template Name</shortDescription>
+        <value>Case Rejection Template Name</value>
+    </labels>
+    <labels>
+        <fullName>Redeem_Product_Email_Template</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Redeem Product Email Template</shortDescription>
+        <value>Redeem Product Email Template</value>
+    </labels>
+</CustomLabels>
